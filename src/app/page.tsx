@@ -3,9 +3,10 @@ export default function Home() {
     <>
       <main className="px-[5vw]">
         <div className="max-w-4xl mx-auto">
-          <section className="pt-[8vh]">
-            <h1 className="text-4xl text-white font-semibold leading-none">
-              Olá, eu sou Rodrigo Cortezi 👋
+          <section className="pt-8 md:pt-[6vh]">
+            <h1 className="text-3xl md:text-4xl text-white font-semibold leading-tight md:leading-none">
+              Olá, eu sou{' '}
+              <span className="whitespace-nowrap">Rodrigo Cortezi</span> 👋
             </h1>
             <p className="pt-12 leading-relaxed">
               <span className="text-white">Eu sou Engenheiro de Software</span>{' '}
@@ -62,7 +63,7 @@ export default function Home() {
               </li>
             </ul>
           </section>
-          <section className="pt-16">
+          <section className="pt-16 pb-4">
             <p className="leading-relaxed">
               Você pode dar uma olhada em alguns dos meus projetos no{' '}
               <a href="https://github.com/rodrigovcortezi">GitHub</a>, ou me
@@ -74,7 +75,6 @@ export default function Home() {
           </section>
         </div>
       </main>
-      <footer></footer>
     </>
   )
 }
