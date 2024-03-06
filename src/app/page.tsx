@@ -3,12 +3,12 @@ export default function Home() {
     <>
       <main className="px-[5vw]">
         <div className="max-w-4xl mx-auto">
-          <section className="pt-8 md:pt-[6vh]">
+          <section className="pt-8 md:pt-[6vh] 2xl:pt-36">
             <h1 className="text-3xl md:text-4xl text-white font-semibold leading-tight md:leading-none">
               Olá, eu sou{' '}
               <span className="whitespace-nowrap">Rodrigo Cortezi</span> 👋
             </h1>
-            <p className="pt-12 leading-relaxed">
+            <p className="pt-8 leading-relaxed">
               <span className="text-white">Eu sou Engenheiro de Software</span>{' '}
               com uma verdadeira paixão por desenvolver soluções completas,
               combinando o desenvolvimento Full-Stack e uma visão empreendedora
@@ -63,7 +63,7 @@ export default function Home() {
               </li>
             </ul>
           </section>
-          <section className="pt-16 pb-4">
+          <section className="pt-16 pb-8">
             <p className="leading-relaxed">
               Você pode dar uma olhada em alguns dos meus projetos no{' '}
               <a href="https://github.com/rodrigovcortezi">GitHub</a>, ou me
