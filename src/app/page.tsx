@@ -1,3 +1,24 @@
+interface ExperienceParagraphProps {
+  companyName: string
+  period: [number, number]
+  children: React.ReactNode
+}
+
+const ExperienceParagraph = ({
+  companyName,
+  period,
+  children,
+}: ExperienceParagraphProps) => {
+  return (
+    <>
+      <h3 className="inline text-white">
+        <b>{companyName}</b> ({period[0]}-{period[1]}) ––&ensp;
+      </h3>
+      <p className="inline">{children}</p>
+    </>
+  )
+}
+
 export default function Home() {
   return (
     <>
@@ -26,40 +47,37 @@ export default function Home() {
           <section className="pt-11">
             <ul className="space-y-6 leading-relaxed">
               <li>
-                <h3 className="inline text-white">
-                  <b>Hurb</b> (2022-2023) ––&ensp;
-                </h3>
-                <p className="inline">
+                <ExperienceParagraph companyName="Hurb" period={[2022, 2023]}>
                   Contribuí para o desenvolvimento de uma integração de software
                   chave na Hurb, expandindo efetivamente o catálogo de produtos
                   de atividades em mais de 200%. Esse aumento significativo nas
                   ofertas melhorou substancialmente a escolha do usuário e a
                   escalabilidade do negócio.
-                </p>
+                </ExperienceParagraph>
               </li>
               <li>
-                <h3 className="inline text-white">
-                  <b>Clarific</b> (2020-2022) ––&ensp;
-                </h3>
-                <p className="inline">
+                <ExperienceParagraph
+                  companyName="Clarific"
+                  period={[2020, 2022]}
+                >
                   Prestei consultoria em soluções de software para pequenas
                   empresas, levando ao desenvolvimento de mais de 4 produtos de
                   software. Esse papel envolveu compreender as necessidades
                   únicas dos negócios, projetar soluções sob medida e
                   implementar com sucesso essas tecnologias para impulsionar o
                   crescimento e a eficiência.
-                </p>
+                </ExperienceParagraph>
               </li>
               <li>
-                <h3 className="inline text-white">
-                  <b>Partiu Ingresso</b> (2019-2020) ––&ensp;
-                </h3>
-                <p className="inline">
+                <ExperienceParagraph
+                  companyName="Partiu Ingresso"
+                  period={[2019, 2020]}
+                >
                   Desenvolvi de forma independente a plataforma PartiuIngresso,
                   um <i>marketplace</i> de ingressos dinâmico que alcançou mais
                   de R$1 milhão em vendas de ingressos e atendeu mais de 8.000
                   clientes, possibilitando um acesso adequado a shows e eventos.
-                </p>
+                </ExperienceParagraph>
               </li>
             </ul>
           </section>
