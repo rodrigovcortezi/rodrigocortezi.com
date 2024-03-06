@@ -11,9 +11,9 @@ const ExperienceParagraph = ({
 }: ExperienceParagraphProps) => {
   return (
     <>
-      <h3 className="inline text-white">
+      <h2 className="inline text-white">
         <b>{companyName}</b> ({period[0]}-{period[1]}) ––&ensp;
-      </h3>
+      </h2>
       <p className="inline">{children}</p>
     </>
   )
