@@ -1,0 +1,36 @@
+{
+  "Index": {
+    "title": "Olá, eu sou <name>Rodrigo Cortezi</name> 👋",
+    "about": {
+      "paragraph1": "<greeting>Eu sou Engenheiro de Software</greeting> com uma verdadeira paixão por desenvolver soluções completas, combinando o desenvolvimento Full-Stack e uma visão empreendedora para trazer à vida inovações significativas. Nos útlimos 5 anos, estive à frente de iniciativas marcantes, incluindo a expansão do catálogo de produtos na Hurb e o lançamento bem-sucedido do PartiuIngresso, um marketplace de ingressos.",
+      "paragraph2": "Estou sempre em busca de desafios que me permitam explorar novas tecnologias e contribuir para o desenvolvimento de produtos que façam a diferença."
+    },
+    "experiences": {
+      "hurb": {
+        "company": "Hurb",
+        "period": {
+          "start": "2022",
+          "end": "2023"
+        },
+        "description": "Contribuí para o desenvolvimento de uma integração de software chave na Hurb, expandindo efetivamente o catálogo de produtos de atividades em mais de 200%. Esse aumento significativo nas ofertas melhorou substancialmente a escolha do usuário e a escalabilidade do negócio."
+      },
+      "clarific": {
+        "company": "Clarific",
+        "period": {
+          "start": "2020",
+          "end": "2022"
+        },
+        "description": "Prestei consultoria em soluções de software para pequenas empresas, levando ao desenvolvimento de mais de 4 produtos de software. Esse papel envolveu compreender as necessidades únicas dos negócios, projetar soluções sob medida e implementar com sucesso essas tecnologias para impulsionar o crescimento e a eficiência."
+      },
+      "partiuingresso": {
+        "company": "Partiu Ingresso",
+        "period": {
+          "start": "2019",
+          "end": "2020"
+        },
+        "description": "Desenvolvi de forma independente a plataforma PartiuIngresso, um marketplace de ingressos dinâmico que alcançou mais de R$1 milhão em vendas de ingressos e atendeu mais de 8.000 clientes, possibilitando um acesso adequado a shows e eventos."
+      }
+    },
+    "contact": "Você pode dar uma olhada em alguns dos meus projetos no <github></github>, ou me chamar no <linkedin></linkedin>. Ou se preferir, pode me mandar um <email></email>."
+  }
+}
