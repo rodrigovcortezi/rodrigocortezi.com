@@ -1,5 +1,6 @@
 import createMiddleware from 'next-intl/middleware'
 import type { NextRequest } from 'next/server'
+import { locales } from './i18n'
 
 const COOKIE_LOCALE_NAME = 'NEXT_LOCALE'
 
@@ -7,12 +8,11 @@ const customLocaleDetection = (request: NextRequest) => {
   // use geolocation if available
   const country = request.headers.get('X-Vercel-IP-Country')
   const [, localePrefix, ...segments] = request.nextUrl.pathname.split('/')
-  const locale =
-    localePrefix === 'pt-BR' || localePrefix === 'en'
-      ? localePrefix
-      : country === 'BR'
-        ? 'pt-BR'
-        : ''
+  const locale = locales.includes(localePrefix)
+    ? localePrefix
+    : country === 'BR'
+      ? 'pt-BR'
+      : ''
 
   // rewrite request pathname with resolved location
   request.nextUrl.pathname = [locale, segments].join('/')

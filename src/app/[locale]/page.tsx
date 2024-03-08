@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 interface ExperienceParagraphProps {
   companyName: string
@@ -21,7 +22,10 @@ const ExperienceParagraph = ({
   )
 }
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: Readonly<{ params: { locale: string } }>) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('Index')
   return (
     <>
