@@ -5,8 +5,7 @@ const COOKIE_LOCALE_NAME = 'NEXT_LOCALE'
 
 const customLocaleDetection = (request: NextRequest) => {
   // use geolocation if available
-  // const country = request.headers.get('X-Vercel-IP-Country')
-  const country = 'BR'
+  const country = request.headers.get('X-Vercel-IP-Country')
   const [, localePrefix, ...segments] = request.nextUrl.pathname.split('/')
   const locale =
     localePrefix === 'pt-BR' || localePrefix === 'en'
