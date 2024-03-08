@@ -1,8 +1,12 @@
 import createMiddleware from 'next-intl/middleware'
 import type { NextRequest } from 'next/server'
 
-export default async function middleware(request: NextRequest) {
-  const country = request.headers.get('X-Vercel-IP-Country')
+const COOKIE_LOCALE_NAME = 'NEXT_LOCALE'
+
+const customLocaleDetection = (request: NextRequest) => {
+  // use geolocation if available
+  // const country = request.headers.get('X-Vercel-IP-Country')
+  const country = 'BR'
   const [, localePrefix, ...segments] = request.nextUrl.pathname.split('/')
   const locale =
     localePrefix === 'pt-BR' || localePrefix === 'en'
@@ -10,12 +14,21 @@ export default async function middleware(request: NextRequest) {
       : country === 'BR'
         ? 'pt-BR'
         : ''
-  request.nextUrl.pathname = [locale, segments].join('/')
 
+  // rewrite request pathname with resolved location
+  request.nextUrl.pathname = [locale, segments].join('/')
+}
+
+export default async function middleware(request: NextRequest) {
   const handleI18nRouting = createMiddleware({
     locales: ['en', 'pt-BR'],
     defaultLocale: 'pt-BR',
   })
+
+  const isLocaleCookieSet = Boolean(request.cookies.get(COOKIE_LOCALE_NAME))
+  if (!isLocaleCookieSet) {
+    customLocaleDetection(request)
+  }
 
   return handleI18nRouting(request)
 }
