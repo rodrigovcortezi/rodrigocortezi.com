@@ -2,7 +2,7 @@
   "Index": {
     "title": "Hi there, I'm <name>Rodrigo Cortezi</name> 👋",
     "about": {
-      "paragraph1": "<greeting>I am a Software Engineer</greeting> with a true passion for developing comprehensive solutions, combining Full-Stack development and an entrepreneurial mindset to bring meaningful innovations to life. Over the last 5 years, I have led significant initiatives, including the expansion of the product catalog at Hurb and the successful launch of PartiuIngresso, a ticket marketplace.",
+      "paragraph1": "<greeting>I am a Software Engineer</greeting> with a true passion for developing comprehensive solutions, combining Full-Stack development and an entrepreneurial mindset to bring meaningful innovations to life. Over the last 5 years, I have led significant initiatives, including the expansion of the product catalog at Hurb and the successful launch of PartiuIngresso, a ticket <i>marketplace</i>.",
       "paragraph2": "I am always in search of challenges that allow me to explore new technologies and contribute to the development of products that make a difference."
     },
     "experiences": {
@@ -20,7 +20,7 @@
           "start": "2020",
           "end": "2022"
         },
-        "description": "Independently developed the PartiuIngresso platform, a dynamic ticket marketplace that achieved more then R$1 million in ticket sales and served more than 8,000 customers, enabling seamless access to shows and events."
+        "description": "Provided software solutions consulting to small businesses, leading to the development of over 4 key software products. This role involved understanding unique business needs, designing tailored solutions, and successfully implementing these technologies to drive growth and efficiency."
       },
       "partiuingresso": {
         "company": "Partiu Ingresso",
@@ -28,7 +28,7 @@
           "start": "2019",
           "end": "2020"
         },
-        "description": "Provided software solutions consulting to small businesses, leading to the development of over 4 key software products. This role involved understanding unique business needs, designing tailored solutions, and successfully implementing these technologies to drive growth and efficiency."
+        "description": "Independently developed the PartiuIngresso platform, a dynamic ticket <i>marketplace</i> that achieved more then R$1 million in ticket sales and served more than 8,000 customers, enabling seamless access to shows and events."
       }
     },
     "contact": "You can check out some of my projects on <github></github>, or reach out to me on <linkedin></linkedin>. Or if you like, you can send me an <email></email>."

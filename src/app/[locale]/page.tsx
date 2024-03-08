@@ -40,6 +40,7 @@ export default function Home() {
                 greeting: (chunks) => (
                   <span className="text-white">{chunks}</span>
                 ),
+                i: (chunks) => <i>{chunks}</i>,
               })}
             </p>
             <p className="pt-4 leading-relaxed">{t('about.paragraph2')}</p>
@@ -76,7 +77,9 @@ export default function Home() {
                     t('experiences.partiuingresso.period.end'),
                   ]}
                 >
-                  {t('experiences.partiuingresso.description')}
+                  {t.rich('experiences.partiuingresso.description', {
+                    i: (chunks) => <i>{chunks}</i>,
+                  })}
                 </ExperienceParagraph>
               </li>
             </ul>
