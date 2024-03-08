@@ -22,6 +22,7 @@ export default async function middleware(request: NextRequest) {
   const handleI18nRouting = createMiddleware({
     locales: ['en', 'pt-BR'],
     defaultLocale: 'pt-BR',
+    localePrefix: 'as-needed',
   })
 
   const isLocaleCookieSet = Boolean(request.cookies.get(COOKIE_LOCALE_NAME))
