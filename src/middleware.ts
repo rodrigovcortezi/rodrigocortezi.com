@@ -12,10 +12,10 @@ const customLocaleDetection = (request: NextRequest) => {
     ? localePrefix
     : country === 'BR'
       ? 'pt-BR'
-      : ''
+      : country ?? ''
 
   // rewrite request pathname with resolved location
-  request.nextUrl.pathname = [locale, segments].join('/')
+  request.nextUrl.pathname = [locale, ...segments].join('/')
 }
 
 export default async function middleware(request: NextRequest) {
