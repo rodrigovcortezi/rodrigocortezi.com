@@ -1,6 +1,6 @@
 import createMiddleware from 'next-intl/middleware'
 import type { NextRequest } from 'next/server'
-import { locales } from './i18n'
+import { locales, localePrefix } from './i18n'
 
 const COOKIE_LOCALE_NAME = 'NEXT_LOCALE'
 
@@ -8,7 +8,7 @@ const customLocaleDetection = (request: NextRequest) => {
   // use geolocation if available
   const country = request.headers.get('X-Vercel-IP-Country')
   const [, localePrefix, ...segments] = request.nextUrl.pathname.split('/')
-  const locale = locales.includes(localePrefix)
+  const locale = locales.includes(localePrefix as any)
     ? localePrefix
     : country === 'BR'
       ? 'pt-BR'
@@ -22,7 +22,7 @@ export default async function middleware(request: NextRequest) {
   const handleI18nRouting = createMiddleware({
     locales: ['en', 'pt-BR'],
     defaultLocale: 'pt-BR',
-    localePrefix: 'as-needed',
+    localePrefix,
   })
 
   const isLocaleCookieSet = Boolean(request.cookies.get(COOKIE_LOCALE_NAME))
