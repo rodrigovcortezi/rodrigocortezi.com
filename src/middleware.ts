@@ -33,10 +33,16 @@ export default async function middleware(request: NextRequest) {
   }
 
   const response = handleI18nRouting(request)
-  response.headers.append(
-    'Set-Cookie',
-    'cookieName=cookieValue; Path=/; Max-Age=3600; SameSite=Lax; Secure',
-  )
+  response.cookies.set('cookieName', 'cookieValue', {
+    path: '/',
+    maxAge: 3600,
+    sameSite: 'lax',
+    secure: true,
+  })
+  // response.headers.append(
+  //   'Set-Cookie',
+  //   'cookieName=cookieValue; Path=/; Max-Age=3600; SameSite=Lax; Secure',
+  // )
 
   return response
 }
