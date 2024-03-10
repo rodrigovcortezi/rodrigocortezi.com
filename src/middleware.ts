@@ -32,7 +32,13 @@ export default async function middleware(request: NextRequest) {
     customLocaleDetection(request)
   }
 
-  return handleI18nRouting(request)
+  const response = handleI18nRouting(request)
+  response.headers.append(
+    'Set-Cookie',
+    'cookieName=cookieValue; Path=/; Max-Age=3600; SameSite=Lax; Secure',
+  )
+
+  return response
 }
 
 export const config = {
