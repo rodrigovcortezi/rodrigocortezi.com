@@ -37,7 +37,6 @@ export default async function middleware(request: NextRequest) {
     path: '/',
     maxAge: 3600,
     sameSite: 'lax',
-    secure: true,
   })
   // response.headers.append(
   //   'Set-Cookie',
