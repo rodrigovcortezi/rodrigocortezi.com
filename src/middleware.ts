@@ -32,11 +32,7 @@ export default async function middleware(request: NextRequest) {
     customLocaleDetection(request)
   }
 
-  const response = handleI18nRouting(request)
-  // Vercel `set-cookie` test
-  response.cookies.set('ts', Date.now().toString())
-
-  return response
+  return handleI18nRouting(request)
 }
 
 export const config = {

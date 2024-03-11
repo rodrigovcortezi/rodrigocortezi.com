@@ -3,7 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { Footer } from '@/components/Footer'
+import { Footer } from '@/components/footer'
+import { SyncLocale } from '@/components/syncLocale'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale} className="h-full">
+      <SyncLocale locale={locale} path="/" />
       <body className={`text-gray ${inter.className} h-full`}>
         <div className="px-[5vw] h-full">
           <div className="flex flex-col max-w-4xl mx-auto h-full">
