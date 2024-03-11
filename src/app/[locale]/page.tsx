@@ -120,7 +120,7 @@ export default function Home({
 
   return (
     <main>
-      <div className="pt-8 md:pt-[6vh] 2xl:pt-36">
+      <div className="pt-8 md:pt-[6vh] 2xl:pt-20">
         <section>
           <AboutSection about={about} />
         </section>
