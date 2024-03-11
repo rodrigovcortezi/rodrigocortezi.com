@@ -33,15 +33,8 @@ export default async function middleware(request: NextRequest) {
   }
 
   const response = handleI18nRouting(request)
-  response.cookies.set('cookieName', 'cookieValue', {
-    path: '/',
-    maxAge: 3600,
-    sameSite: 'lax',
-  })
-  // response.headers.append(
-  //   'Set-Cookie',
-  //   'cookieName=cookieValue; Path=/; Max-Age=3600; SameSite=Lax; Secure',
-  // )
+  // Vercel `set-cookie` test
+  response.cookies.set('ts', Date.now().toString())
 
   return response
 }
