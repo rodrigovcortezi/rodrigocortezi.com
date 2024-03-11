@@ -23,7 +23,7 @@ const FooterLink = ({
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col py-7 items-center">
+    <footer className="flex flex-col py-7 pt-12 items-center">
       <div className="text-white flex items-center gap-7 pb-7">
         <FooterLink href="https://linkedin.com/in/rodrigo-cortezi">
           <LinkedinIcon size={30} />
