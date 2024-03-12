@@ -5,6 +5,7 @@ import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { Footer } from '@/components/footer'
 import { SyncLocale } from '@/components/syncLocale'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           </div>
         </div>
       </body>
+      <Analytics />
     </html>
   )
 }
