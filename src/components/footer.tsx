@@ -24,21 +24,21 @@ const FooterLink = ({
 export const Footer = () => {
   return (
     <footer className="flex flex-col py-7 pt-12 items-center">
-      <div className="text-white flex items-center gap-7 pb-7">
+      <div className="text-white flex items-center gap-10">
         <FooterLink href="https://linkedin.com/in/rodrigo-cortezi">
-          <LinkedinIcon size={30} />
+          <LinkedinIcon size={28} />
         </FooterLink>
         <FooterLink href="https://github.com/rodrigovcortezi">
-          <GithubIcon size={32} />
+          <GithubIcon size={30} />
         </FooterLink>
         <FooterLink href="https://x.com/rodrigovcortezi">
-          <XIcon size={26} />
+          <XIcon size={24} />
         </FooterLink>
         <FooterLink href="mailto:rodrigovcortezi@gmail.com" target="">
-          <EmailIcon size={32} />
+          <EmailIcon size={30} />
         </FooterLink>
       </div>
-      <div className="text-sm text-white space-x-2">
+      <div className="text-sm text-white space-x-2 pt-7">
         <LocaleLink href="/" locale="pt-BR">
           Português
         </LocaleLink>
