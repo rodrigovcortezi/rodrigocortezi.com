@@ -110,11 +110,27 @@ export default function Home({
 
   const contact: Contact = {
     description: t.rich('contact', {
-      github: () => <a href="https://github.com/rodrigovcortezi">GitHub</a>,
-      linkedin: () => (
-        <a href="https://linkedin.com/in/rodrigo-cortezi">LinkedIn</a>
+      github: () => (
+        <a
+          href="https://github.com/rodrigovcortezi"
+          className="hover:text-purple-500"
+        >
+          GitHub
+        </a>
       ),
-      email: () => <a href="mailto:rodrigovcortezi@gmail.com">email</a>,
+      linkedin: () => (
+        <a
+          href="https://linkedin.com/in/rodrigo-cortezi"
+          className="hover:text-blue-500"
+        >
+          LinkedIn
+        </a>
+      ),
+      email: () => (
+        <a href="mailto:rodrigovcortezi@gmail.com" className="hover:text-white">
+          email
+        </a>
+      ),
     }),
   }
 
