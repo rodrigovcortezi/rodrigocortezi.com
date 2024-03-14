@@ -144,7 +144,7 @@ export default function Home({
       <div className="pt-11">
         <ExperiencesSection experiences={experiences} />
       </div>
-      <div className="pt-16 pb-8">
+      <div className="pt-14 pb-8">
         <ContactSection contact={contact} />
       </div>
     </main>
