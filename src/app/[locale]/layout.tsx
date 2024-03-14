@@ -31,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang={locale} className="h-full">
       <SyncLocale locale={locale} path="/" />
-      <body className={`text-gray ${inter.className} h-full`}>
+      <body
+        className={`text-gray ${inter.className} h-full selection:bg-white selection:text-black`}
+      >
         <div className="px-[5vw] h-full">
           <div className="flex flex-col max-w-4xl mx-auto h-full">
             <div className="grow">{children}</div>
