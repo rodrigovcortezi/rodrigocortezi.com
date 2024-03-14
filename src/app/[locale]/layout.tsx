@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -5,7 +7,6 @@ import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { Footer } from '@/components/footer'
 import { SyncLocale } from '@/components/syncLocale'
-import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           <div className="flex flex-col max-w-4xl mx-auto h-full">
             <div className="grow">{children}</div>
             <Footer />
+            <SpeedInsights />
           </div>
         </div>
       </body>
