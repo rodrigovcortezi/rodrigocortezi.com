@@ -1,23 +1,30 @@
+import { Animate } from '@/components/animate'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
+const Header = ({ greeting }: { greeting: React.ReactNode }) => {
+  return (
+    <header>
+      <h1 className="text-3xl md:text-4xl text-white font-semibold leading-tight md:leading-none">
+        {greeting}
+      </h1>
+    </header>
+  )
+}
+
 interface About {
-  greeting: React.ReactNode
   paragraph1: React.ReactNode
   paragraph2: React.ReactNode
 }
 
 const AboutSection = ({
-  about: { greeting, paragraph1, paragraph2 },
+  about: { paragraph1, paragraph2 },
 }: {
   about: About
 }) => {
   return (
     <section>
-      <h1 className="text-3xl md:text-4xl text-white font-semibold leading-tight md:leading-none">
-        {greeting}
-      </h1>
-      <p className="pt-8 leading-relaxed">{paragraph1}</p>
+      <p className="leading-relaxed">{paragraph1}</p>
       <p className="pt-4 leading-relaxed">{paragraph2}</p>
     </section>
   )
@@ -85,10 +92,11 @@ export default function Home({
   unstable_setRequestLocale(locale)
   const t = useTranslations('Index')
 
+  const greeting = t.rich('title', {
+    name: (chunks) => <span className="whitespace-nowrap">{chunks}</span>,
+  })
+
   const about: About = {
-    greeting: t.rich('title', {
-      name: (chunks) => <span className="whitespace-nowrap">{chunks}</span>,
-    }),
     paragraph1: t.rich('about.paragraph1', {
       greeting: (chunks) => <span className="text-white">{chunks}</span>,
       i: (chunks) => <i>{chunks}</i>,
@@ -136,15 +144,45 @@ export default function Home({
 
   return (
     <main>
-      <div className="pt-8 md:pt-[6vh] 2xl:pt-24">
-        <AboutSection about={about} />
-      </div>
-      <div className="pt-11">
-        <ExperiencesSection experiences={experiences} />
-      </div>
-      <div className="pt-14 pb-8">
-        <ContactSection contact={contact} />
-      </div>
+      <Animate
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+          },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <Animate
+          variants={{
+            hidden: { opacity: 0, y: 25 },
+            show: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.7, delay: 0 }}
+        >
+          <div className="pt-8 md:pt-[6vh] 2xl:pt-24">
+            <Header greeting={greeting} />
+          </div>
+        </Animate>
+        <Animate
+          variants={{
+            hidden: { opacity: 0, y: 25 },
+            show: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+        >
+          <div className="pt-8">
+            <AboutSection about={about} />
+          </div>
+          <div className="pt-11">
+            <ExperiencesSection experiences={experiences} />
+          </div>
+          <div className="pt-14 pb-8">
+            <ContactSection contact={contact} />
+          </div>
+        </Animate>
+      </Animate>
     </main>
   )
 }

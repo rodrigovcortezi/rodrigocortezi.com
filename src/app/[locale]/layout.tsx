@@ -7,6 +7,7 @@ import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { Footer } from '@/components/footer'
 import { SyncLocale } from '@/components/syncLocale'
+import { Animate } from '@/components/animate'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,7 +39,14 @@ export default function RootLayout({
         <div className="px-[5vw] h-full">
           <div className="flex flex-col max-w-4xl mx-auto h-full">
             <div className="grow">{children}</div>
-            <Footer />
+            <Animate
+              variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+              initial="hidden"
+              animate="show"
+              transition={{ duration: 1.6, delay: 1.3 }}
+            >
+              <Footer />
+            </Animate>
             <SpeedInsights />
           </div>
         </div>
