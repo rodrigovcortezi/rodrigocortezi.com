@@ -137,9 +137,7 @@ export default function Home({
   return (
     <main>
       <div className="pt-8 md:pt-[6vh] 2xl:pt-24">
-        <section>
-          <AboutSection about={about} />
-        </section>
+        <AboutSection about={about} />
       </div>
       <div className="pt-11">
         <ExperiencesSection experiences={experiences} />
