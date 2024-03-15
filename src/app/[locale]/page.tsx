@@ -146,42 +146,24 @@ export default function Home({
     <main>
       <Animate
         variants={{
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-          },
+          hidden: { opacity: 0, y: 45 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
         }}
         initial="hidden"
         animate="show"
       >
-        <Animate
-          variants={{
-            hidden: { opacity: 0, y: 25 },
-            show: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.7, delay: 0 }}
-        >
-          <div className="pt-8 md:pt-[6vh] 2xl:pt-24">
-            <Header greeting={greeting} />
-          </div>
-        </Animate>
-        <Animate
-          variants={{
-            hidden: { opacity: 0, y: 25 },
-            show: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-        >
-          <div className="pt-8">
-            <AboutSection about={about} />
-          </div>
-          <div className="pt-11">
-            <ExperiencesSection experiences={experiences} />
-          </div>
-          <div className="pt-14 pb-8">
-            <ContactSection contact={contact} />
-          </div>
-        </Animate>
+        <div className="pt-8 md:pt-[6vh] 2xl:pt-24">
+          <Header greeting={greeting} />
+        </div>
+        <div className="pt-8">
+          <AboutSection about={about} />
+        </div>
+        <div className="pt-11">
+          <ExperiencesSection experiences={experiences} />
+        </div>
+        <div className="pt-14 pb-8">
+          <ContactSection contact={contact} />
+        </div>
       </Animate>
     </main>
   )

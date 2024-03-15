@@ -43,7 +43,7 @@ export default function RootLayout({
               variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
               initial="hidden"
               animate="show"
-              transition={{ duration: 1.6, delay: 1.3 }}
+              transition={{ duration: 1.6, delay: 1 }}
             >
               <Footer />
             </Animate>
